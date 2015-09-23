@@ -8,20 +8,32 @@ function revealPoint(y) {
     pointsArray[y].style.WebkitTransform = "scaleX(1) translateY(0)";
 }
 
-window.onload = function () {
+$(window).load(function() {
 
-    if (window.innerHeight > 950) {
-        forEach(pointsArray, revealPoint);
+    if ($(window).height() > 950) {
+        animatePoints();
     }
+    
+    var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
 
-    window.addEventListener('scroll', function (event) {
+    $(window).scroll(function(event) {
 
-        if (pointsArray[0].getBoundingClientRect().top <= 500) {
-            forEach(pointsArray, revealPoint);
+        if ($(window).scrollTop() >= scrollDistance) {
+            animatePoints();
         }
 
     });
-};
+});
     
-
+var animatePoints = function() {
+    
+    var revealPoint = function() {
+        $(this).css({
+            opacity: 1,
+            transform: 'scaleX(1) translateY(0)'
+        });
+    };
+    
+    $.each($('.point'), revealPoint);
+};
 
