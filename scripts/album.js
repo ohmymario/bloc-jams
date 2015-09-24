@@ -70,14 +70,28 @@
 var findParentByClassName = function(element, targetClass) {
     
     var currentParent = element.parentElement;
-    
+    //check to make sure element has parent
+    if (currentParent == undefined) {
+        alert ("No parent found");
+        return null;
+    }
     while (currentParent.className != targetClass) {
         currentParent = currentParent.parentElement;
+        if (currentParent == undefined) {
+        alert ("No parent found with that class name");
+        return null;
     }
+    }
+    //check to make sure ancestor with class exists
+    
     
     return currentParent;
 
 };
+
+
+//Checks to see if a parent exists. If it doesn't, then show an alert that says "No parent found".
+//Shows a different alert when it fails to find a parent with the given class name ("No parent found with that class name")
 
 var getSongItem = function(element) {
     
