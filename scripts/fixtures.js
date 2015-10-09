@@ -29,18 +29,3 @@ var albumMarconi = {
          { name: 'Wrong phone number', length: '2:15'}
      ]
  };
-
-var albumMyAlbum = {
-     name: 'Listen to My Album',
-     artist: 'Unknown',
-     label: 'Long Song',
-     year: '2020',
-     albumArtUrl: 'assets/images/album_covers/21.png',
-     songs: [
-         { name: 'First song', length: '10:01' },
-         { name: '2nd Song', length: '5:51' },
-         { name: 'Song after 2nd', length: '46:21'},
-         { name: 'Close to the end', length: '3:14' },
-         { name: 'End of album', length: '87:01'}
-     ]
- };
